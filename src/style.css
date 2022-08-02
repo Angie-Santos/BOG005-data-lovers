@@ -1,0 +1,68 @@
+/* 
+
+1. posicionamiento static, absolute, relative, fixed
+2. modelo de caja margin, border, padding, content
+3. tipografia tipos, tamaños de fuente, etc
+4. visual box-shadow, border-radius, gradient, etc
+5. otros 
+
+*/
+:root{
+    /* colors */
+    --dark-color: #01050B;
+    --primary-color: #010A13;
+    --third-color: #0A1428;
+    --light-color: #D9D9D9;
+    --secondary-color-light: #C8AA6E;
+    --secondary-color: #C89B3C;
+    --secondary-color-dark: #785A28;
+    --font-serif: 'Marcellus', serif;
+    --font-sans: 'Catamaran', sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+/****** header *******/
+header{
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 14rem;
+    background-color: var(--dark-color);
+    border-bottom: var(--secondary-color) 0.5rem solid;
+}
+
+header img{
+    height: 80%;
+}
+
+/****** main *******/
+main{
+    display: flex;
+}
+
+/****** footer *******/
+footer{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 6rem;
+    font-family: var(--font-sans);
+    font-size: 1.3rem;
+    color: var(--third-color);
+    background-color: var(--secondary-color-dark);
+}
