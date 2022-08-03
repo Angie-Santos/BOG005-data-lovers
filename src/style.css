@@ -59,7 +59,7 @@ main{
 
 .card{
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     align-items:flex-end;
     margin: 3rem;
     width: 35rem;
@@ -80,6 +80,7 @@ main{
     font-family: var(--font-serif);
     font-size: 4rem;
     color: var(--secondary-color);
+    border-top: var(--secondary-color) 0.2rem solid;
 }
 
 .card__content__title{
@@ -90,7 +91,6 @@ main{
 }
 
 .card__content{
-    border-top: var(--secondary-color) 0.2rem solid;
     width: 100%;
     background-color:  rgba(1,5,11,0.8);
 }
