@@ -1,13 +1,4 @@
-/* 
-
-1. posicionamiento static, absolute, relative, fixed
-2. modelo de caja margin, border, padding, content
-3. tipografia tipos, tamaños de fuente, etc
-4. visual box-shadow, border-radius, gradient, etc
-5. otros 
-
-*/
-:root{
+:root {
     /* colors */
     --dark-color: #01050B;
     --primary-color: #010A13;
@@ -16,88 +7,100 @@
     --secondary-color-light: #C8AA6E;
     --secondary-color: #C89B3C;
     --secondary-color-dark: #785A28;
+    /* fonts */
     --font-serif: 'Marcellus', serif;
     --font-sans: 'Catamaran', sans-serif;
 }
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html{
+html {
     font-size: 62.5%;
 }
 
-/****** header *******/
-header{
+/******* header *******/
+header {
     position: sticky;
     top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 14rem;
+    height: 12rem;
     background-color: var(--dark-color);
-    border-bottom: var(--secondary-color) 0.5rem solid;
+    border-bottom: var(--secondary-color) 0.1rem solid;
     z-index: 2;
     box-shadow: 0rem 3rem 5rem var(--primary-color);
+    box-shadow: 0rem -2rem 8rem rgba(200, 155, 60, 0.9);
 }
 
-header img{
+header img {
     height: 80%;
 }
 
-/****** main *******/
-main{
+/******* main *******/
+main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     background-color: var(--primary-color);
 }
 
-.card{
-    display: flex;
-    flex-direction: column;
-    align-items:flex-end;
-    margin: 3rem;
-    width: 35rem;
-    height: 45rem;
+.card {
+    position: relative;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    width: 30rem;
+    height: 35rem;
+    background-size: 170% 83.5%;
+    background-position: 70% 0%;
     text-align: center;
     border: var(--secondary-color) 0.2rem solid;
-    box-shadow: 0rem 0rem 3rem rgba(200,155,60,0.7) inset;
+    box-shadow: 0rem 0rem 5rem 2rem rgba(1, 5, 11) inset;
     overflow: hidden;
 }
 
-.card__imagechampion{
-    width: 140%;
-    height: 110%;
+.card__imgrol {
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    width: 6rem;
+    background-color: rgba(1, 5, 11, 0.8);
+    box-shadow: 0rem 0rem 2rem 0.5rem var(--dark-color);
 }
 
-.card__content__name{
-    padding: 1rem 0rem 0.5rem 0rem;
+.card__content__name {
+    padding-top: 1rem;
     font-family: var(--font-serif);
-    font-size: 4rem;
+    font-weight: 600;
+    font-size: 2.7rem;
+    letter-spacing: 0.3rem;
     color: var(--secondary-color);
-    border-top: var(--secondary-color) 0.2rem solid;
+    text-shadow: 0rem 0rem 0.5rem var(--secondary-color-light);
 }
 
-.card__content__title{
+.card__content__title {
     padding-bottom: 1rem;
     font-family: var(--font-sans);
-    font-size:2rem;
+    font-size: 1.5rem;
     color: var(--secondary-color-light);
 }
 
-.card__content{
+.card__content {
+    position: absolute;
+    bottom: 0rem;
     width: 100%;
-    background-color:  rgba(1,5,11,0.8);
+    background-color: rgba(1, 5, 11, 0.8);
+    box-shadow: inset 0rem 0rem 3rem var(--dark-color);
 }
 
 
-/****** footer *******/
-footer{
+/******* footer *******/
+footer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,7 +112,60 @@ footer{
     background-color: var(--secondary-color);
 }
 
+/******* Responsive ******/
 
-/* .card__content:hover{
-    background-color:  rgba(1,10,19)
-} */
+/* Mobile */
+
+@media (max-width: 321px) {
+    .card {
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        width: 25rem;
+        height: 28.5rem;
+    }
+
+    .card__imgrol {
+        width: 6rem;
+    }
+
+    .card__content__name {
+        font-size: 2rem;
+    }
+
+    .card__content__title {
+        font-size: 1rem;
+    }
+}
+
+
+/* Tablet y PC */
+
+@media (min-width: 767px) {
+    .card {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        margin-bottom: 4rem;
+        width: 30rem;
+        height: 35rem;
+        background-size: 140% 78.5%;
+    }
+
+    .card:hover {
+        width: 30.5rem;
+        height: 35.5rem;
+        box-shadow: 0rem 0rem 2rem #C89B3C;
+    }
+
+    .card__imgrol {
+        width: 7rem;
+    }
+
+    .card__content__name {
+        font-size: 2.5rem;
+    }
+
+    .card__content__title {
+        font-size: 1.5rem;
+    }
+
+}
