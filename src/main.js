@@ -1,4 +1,4 @@
-import { filterData } from './data.js'
+import {  orderData } from './data.js'
 import data from './data/lol/lol.js'
 
 
@@ -17,7 +17,9 @@ function changeDisplay(){
 
 // visualizar data
 function visualData(championsData) {
+    orderData(championsData,'MAX-DIFFICULTY')
     championsData.forEach(champions => {
+
         // Almacenar valores de los campeones en variables
         let nameChampion = (champions.name).toUpperCase();
         let titleChampion = champions.title;
@@ -26,7 +28,7 @@ function visualData(championsData) {
         let rolChampion = champions.tags;
         let statsChampion = champions.stats;
         let infoChampion = champions.info;
-
+        
         // Crear elementos HTML
         let newDiv = document.createElement('div');
         let div = document.createElement('div');
@@ -129,5 +131,6 @@ buttonWelcome.addEventListener('click',(event) => {
 window.addEventListener('DOMContentLoaded', (event) => {
     visualData(championsData);
 })
+
 
 
