@@ -22,7 +22,7 @@ function changeDisplay() {
 function visualData(championsData) {
     championsData.forEach(champions => {
         // Almacenar valores de los campeones en variables
-        let nameChampion = champions.name;
+        let nameChampion = champions.name.toUpperCase();
         let titleChampion = champions.title;
         let linkImgChampion = champions.splash;
         let rolName = champions.tags[0];

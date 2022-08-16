@@ -125,16 +125,23 @@ main {
 }
 
 /* orderlist */
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 #orderlist{
     margin: 4rem 0rem 3rem 0rem;
     padding: 0.5rem 3rem 0.5rem 3rem;
-    text-align: center;
+    text-align-last:center;
     color: var(--secondary-color-light);
     background-color: var(--primary-color);
     border: none;
     border-bottom: var(--secondary-color) solid 0.1rem;
 }
-
 
 /******* flip cards *******/
 .containercards {

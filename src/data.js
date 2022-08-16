@@ -33,6 +33,7 @@ export const orderData = (data, parameter) => {
 };
 
 
-// export const anotherExample = () => {
-//   return 'OMG';
-// };
+export const filterData = (data,parameter) => {
+  
+  return 'OMG';
+};
