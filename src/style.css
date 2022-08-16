@@ -110,8 +110,6 @@ header {
     background-color: var(--dark-color);
     border-bottom: var(--secondary-color) 0.1rem solid;
     z-index: 2;
-    box-shadow: 0rem 3rem 5rem var(--primary-color);
-    box-shadow: 0rem -2rem 8rem rgba(200, 155, 60, 0.9);
 }
 
 header img {
@@ -125,6 +123,18 @@ main {
     justify-content: space-evenly;
     background-color: var(--primary-color);
 }
+
+/* orderlist */
+#orderlist{
+    margin: 4rem 0rem 3rem 0rem;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    text-align: center;
+    color: var(--secondary-color-light);
+    background-color: var(--primary-color);
+    border: none;
+    border-bottom: var(--secondary-color) solid 0.1rem;
+}
+
 
 /******* flip cards *******/
 .containercards {

@@ -1,47 +1,35 @@
 // estas funciones son de ejemplo
 export const orderData = (data, parameter) => {
 
-  let sortChampions = [];
+  let sortChampions;
+
   switch (parameter) {
     case 'A-Z':
-      data.forEach(data => {
-        sortChampions.push(data.name);
-      })
-      console.log(sortChampions.sort())
+      sortChampions = data.sort((a, b) => ((a.name <= b.name) ? -1 : 1));
       break;
     case 'Z-A':
-      data.forEach(data => {
-        sortChampions.push(data.name);
-      })
-      console.log(sortChampions.reverse())
+      sortChampions = data.reverse((a, b) => ((a.name <= b.name) ? -1 : 1))
       break;
-    case 'MAX-ATTACK':
-      data.forEach(data => {
-        sortChampions.push(data.info.attack);
-      })
+    case 'MAX ATTACK':
+      sortChampions = data.sort((a, b) => ((b.info.attack <= a.info.attack) ? -1 : 1));
       break;
-    case 'MAX-DEFENSE':
-      data.forEach(data => {
-        sortChampions.push(data.info.defense);
-      })
+    case 'MAX DEFENSE':
+      sortChampions = data.sort((a, b) => ((b.info.defense <= a.info.defense) ? -1 : 1)); 
       break;
-    case 'MAX-MAGIC':
-      data.forEach(data => {
-        sortChampions.push(data.info.magic);
-      })
+    case 'MAX MAGIC':
+      sortChampions = data.sort((a, b) => ((b.info.magic <= a.info.magic) ? -1 : 1)); 
       break;
-    case 'MAX-DIFFICULTY':
-      data.forEach(data => {
-        sortChampions.push(data.info.difficulty);
-      })
+    case 'MAX DIFFICULTY':
+      sortChampions = data.sort((a, b) => ((b.info.difficulty <= a.info.difficulty) ? -1 : 1)); 
       break;
+    case 'ORDER BY':
+      sortChampions = data.sort((a, b) => ((a.name <= b.name) ? -1 : 1));
+    break;
     default:
-      data.forEach(data => {
-        sortChampions.push(data.name);
-      })
-      console.log(sortChampions.sort())
-      break;
+      sortChampions = data.sort((a, b) => ((a.name <= b.name) ? -1 : 1));
+    break;
   }
+  return sortChampions;
 };
 
 

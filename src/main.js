@@ -1,13 +1,14 @@
-import {  orderData } from './data.js'
+import { orderData } from './data.js'
 import data from './data/lol/lol.js'
 
 
 const championsData = Object.values(data.data);
 const buttonWelcome = document.querySelector('.welcome__container__button');
+const orderlist = document.querySelector('#orderlist');
 
 
 // cambiar pantalla de bienvenida a principal
-function changeDisplay(){
+function changeDisplay() {
     document.querySelector(".welcome").style.display = "none";
     document.querySelector(".welcome__container").style.display = "none";
     document.querySelector("header").style.display = "flex";
@@ -15,39 +16,39 @@ function changeDisplay(){
     document.querySelector("footer").style.display = "flex";
 }
 
+
+
 // visualizar data
 function visualData(championsData) {
-    orderData(championsData,'MAX-DIFFICULTY')
     championsData.forEach(champions => {
-
         // Almacenar valores de los campeones en variables
-        let nameChampion = (champions.name).toUpperCase();
+        let nameChampion = champions.name;
         let titleChampion = champions.title;
         let linkImgChampion = champions.splash;
         let rolName = champions.tags[0];
         let rolChampion = champions.tags;
         let statsChampion = champions.stats;
         let infoChampion = champions.info;
-        
+
         // Crear elementos HTML
         let newDiv = document.createElement('div');
         let div = document.createElement('div');
         let main = document.querySelector('main');
-        newDiv.className = 'containercards';;
+        newDiv.className = 'containercards';
         div.className = 'box card';
         main.appendChild(newDiv);
         newDiv.appendChild(div);
         div.style.backgroundImage = `url(${linkImgChampion})`;
-        
+
         //frontcard
 
         div.innerHTML =
-        `<img src='/src/assets/img/${rolName}.webp' class='card__imgrol'>
+            `<img src='/src/assets/img/${rolName}.webp' class='card__imgrol'>
         <div class='card__content'>
         <p class='card__content__name'>${nameChampion}</p> 
         <p class='card__content__title'>${titleChampion}</p>
         </div>`;
-        
+
         //backcard
         let backDiv = document.createElement('div');
         backDiv.className = 'box cardback';
@@ -74,11 +75,11 @@ function visualData(championsData) {
                 <img class='cardback__box2--icon' src='/src/assets/icon/level.webp'>
                 <p class=cardback__box2__info>${infoChampion.difficulty}</p>
                 </div>
-            </div>
-            <div class='cardback__box3'>
+                </div>
+                <div class='cardback__box3'>
                 <table class='cardback__box3__table'>
                 <tr class='cardback__box3__table--title'>
-                    <th scope="row">STATS</th>
+                <th scope="row">STATS</th>
                     <th>INITIAL</th>
                     <th>X LEVEL</th>
                 </tr>
@@ -105,7 +106,7 @@ function visualData(championsData) {
                 </table>
             </div>`;
 
-        }
+    }
     );
     cardflip();
 
@@ -114,22 +115,34 @@ function visualData(championsData) {
 // girar tarjeta
 function cardflip() {
     let cards = document.querySelectorAll('.containercards');
-    cards.forEach((card)=>{
-      card.addEventListener( 'click', function() {
-        card.classList.toggle('is-flipped');
-      });
+    cards.forEach((card) => {
+        card.addEventListener('click', function () {
+            card.classList.toggle('is-flipped');
+        });
     });
 }
 
 
 //Escuchar eventos
 
-buttonWelcome.addEventListener('click',(event) => {
+buttonWelcome.addEventListener('click', (event) => {
     changeDisplay();
 })
 
 window.addEventListener('DOMContentLoaded', (event) => {
     visualData(championsData);
+})
+
+
+
+orderlist.addEventListener('change', (event) => {
+    let valueList = orderlist.value;
+    const container = document.querySelectorAll('.containercards')
+    container.forEach(element => {
+        element.innerHTML = '';
+    });
+    let prueba = orderData(championsData, valueList)
+    visualData(prueba)
 })
 
 
