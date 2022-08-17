@@ -124,7 +124,7 @@ main {
     background-color: var(--primary-color);
 }
 
-/* orderlist */
+/* list */
 
 form{
     display: flex;
@@ -139,6 +139,7 @@ form{
     margin: 2rem 0rem 1rem 0rem;
     padding: 0.5rem 3rem 0.5rem 3rem;
     text-align-last:center;
+    width: 70%;
     color: var(--secondary-color-light);
     background-color: var(--primary-color);
     border: none;
@@ -445,6 +446,17 @@ footer {
         height: 85%;
     }
 
+    form{
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    #orderlist, #filterlist{
+        margin: 2rem 3rem 2rem 3rem;
+        padding: 0.5rem 0rem 0.5rem 0rem;
+        width: 40%;
+    }
+
     .card {
         margin-left: 2rem;
         margin-right: 2rem;
@@ -510,5 +522,12 @@ footer {
         margin-bottom: 6rem;
         padding: 1rem 5rem 1rem 5rem;
         font-size: 2rem;
+    }
+
+    
+    #orderlist, #filterlist{
+        margin: 3.5rem 3rem 3rem 3rem;
+        padding: 0.5rem 0rem 0.5rem 0rem;
+        width: 20%;
     }
 }

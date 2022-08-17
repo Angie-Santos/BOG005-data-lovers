@@ -52,7 +52,7 @@ export const filterData = (data, parameter) => {
       filterChampions = data.filter((data => (data.tags).includes('Marksman')));
       break;
     default:
-      data;
+      filterChampions = data.sort((a, b) => ((a.name <= b.name) ? -1 : 1));
       break;
   }
   return filterChampions

@@ -17,8 +17,6 @@ function changeDisplay() {
     document.querySelector("footer").style.display = "flex";
 }
 
-
-
 // visualizar data
 function visualData(championsData) {
     championsData.forEach(champions => {
@@ -133,15 +131,6 @@ buttonWelcome.addEventListener('click', () => {
 window.addEventListener('DOMContentLoaded', visualData(championsData))
 
 
-orderlist.addEventListener('change', () => {
-    let valueList = orderlist.value;
-    const container = document.querySelectorAll('.containercards')
-    container.forEach(element => {
-        element.innerHTML = '';
-    });
-    let order = orderData(championsData, valueList)
-    visualData(order)
-})
 
 filterlist.addEventListener('change', () => {
     let valueList = filterlist.value;
@@ -151,6 +140,30 @@ filterlist.addEventListener('change', () => {
     });
     let filter = filterData(championsData, valueList)
     visualData(filter)
+    
+    if(filterlist.value == 'FILTER BY'){
+       orderlist.value = 'ORDER BY' 
+    }
+    orderlist.addEventListener('change', () => {
+        let valueList = orderlist.value;
+        const container = document.querySelectorAll('.containercards')
+        container.forEach(element => {
+            element.innerHTML = '';
+        });
+        let order = orderData(filter, valueList)
+        visualData(order)
+    })
+
+})
+
+orderlist.addEventListener('change', () => {
+    let valueList = orderlist.value;
+    const container = document.querySelectorAll('.containercards')
+    container.forEach(element => {
+        element.innerHTML = '';
+    });
+    let order = orderData(championsData, valueList)
+    visualData(order)
 })
 
 
