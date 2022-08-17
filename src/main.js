@@ -1,10 +1,11 @@
-import { orderData } from './data.js'
+import { filterData, orderData } from './data.js'
 import data from './data/lol/lol.js'
 
 
 const championsData = Object.values(data.data);
 const buttonWelcome = document.querySelector('.welcome__container__button');
 const orderlist = document.querySelector('#orderlist');
+const filterlist = document.querySelector('#filterlist');
 
 
 // cambiar pantalla de bienvenida a principal
@@ -125,24 +126,31 @@ function cardflip() {
 
 //Escuchar eventos
 
-buttonWelcome.addEventListener('click', (event) => {
-    changeDisplay();
+buttonWelcome.addEventListener('click', () => {
+    changeDisplay()
 })
 
-window.addEventListener('DOMContentLoaded', (event) => {
-    visualData(championsData);
-})
+window.addEventListener('DOMContentLoaded', visualData(championsData))
 
 
-
-orderlist.addEventListener('change', (event) => {
+orderlist.addEventListener('change', () => {
     let valueList = orderlist.value;
     const container = document.querySelectorAll('.containercards')
     container.forEach(element => {
         element.innerHTML = '';
     });
-    let prueba = orderData(championsData, valueList)
-    visualData(prueba)
+    let order = orderData(championsData, valueList)
+    visualData(order)
+})
+
+filterlist.addEventListener('change', () => {
+    let valueList = filterlist.value;
+    const container = document.querySelectorAll('.containercards')
+    container.forEach(element => {
+        element.innerHTML = '';
+    });
+    let filter = filterData(championsData, valueList)
+    visualData(filter)
 })
 
 

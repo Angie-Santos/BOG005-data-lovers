@@ -10,7 +10,7 @@
     /* fonts */
     --font-serif: 'Marcellus', serif;
     --font-sans: 'Catamaran', sans-serif;
-}
+} 
 
 * {
     box-sizing: border-box;
@@ -128,13 +128,15 @@ main {
 
 form{
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
 
-#orderlist{
-    margin: 4rem 0rem 3rem 0rem;
+#orderlist, #filterlist{
+    margin: 2rem 0rem 1rem 0rem;
     padding: 0.5rem 3rem 0.5rem 3rem;
     text-align-last:center;
     color: var(--secondary-color-light);

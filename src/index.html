@@ -25,13 +25,13 @@
 <body>
   <div class="welcome">
     <div class="welcome__container">
-      <img class='welcome__container__logo' src="/src/assets/img/logo.webp" alt="Logo">
-      <img class='welcome__container__img' src="/src/assets/img/female.png" alt="female champion">
-      <p class='welcome__container__resume'><span class="welcome__container__resume--text">EXPLORA
+      <img class="welcome__container__logo" src="/src/assets/img/logo.webp" alt="Logo">
+      <img class="welcome__container__img" src="/src/assets/img/female.png" alt="female champion">
+      <p class="welcome__container__resume"><span class="welcome__container__resume--text">EXPLORA
           LOL</span><br>CONVIÉRTETE EN
         LEYENDA</p>
-      <button class='welcome__container__button'>CONOCE A LOS CAMPEONES</button>
-    </div>>
+      <button class="welcome__container__button">CONOCE A LOS CAMPEONES</button>
+    </div>
   </div>
 
   <header>
@@ -41,7 +41,7 @@
   <main>
     <form>
       <label for="orderlist"></label>
-      <select name="order" id="orderlist" aria-placeholder="ORDER BY">
+      <select name="order" id="orderlist">
         <option  value="ORDER BY">ORDER BY</option>
         <option  value="A-Z">A-Z</option>
         <option  value="Z-A">Z-A</option>
@@ -49,6 +49,16 @@
         <option  value="MAX DEFENSE">MAX DEFENSE</option>
         <option  value="MAX MAGIC">MAX MAGIC</option>
         <option  value="MAX DIFFICULTY">MAX DIFFICULTY</option>
+      </select>
+
+      <select name="filter" id="filterlist" >
+        <option  value="FILTER BY">FILTER BY</option>
+        <option  value="Assassin">ASSASSIN</option>
+        <option  value="Mage">MAGE</option>
+        <option  value="Support">SUPPORT</option>
+        <option  value="Tank">TANK</option>
+        <option  value="Fighter">FIGHTER</option>
+        <option  value="Marksman">MARKSMAN</option>
       </select>
     </form>
   </main>
