@@ -34,22 +34,22 @@ export const filterData = (data, parameter) => {
   let filterChampions;
   switch (parameter) {
     case 'Fighter':
-      filterChampions = data.filter((data => (data.tags).includes('Fighter')));
+      filterChampions = data.filter(((data) => (data.tags).includes('Fighter')));
       break;
     case 'Tank':
-      filterChampions = data.filter((data => (data.tags).includes('Tank')))
+      filterChampions = data.filter(((data) => (data.tags).includes('Tank')))
       break;
     case 'Mage':
-      filterChampions = data.filter((data => (data.tags).includes('Mage')));
+      filterChampions = data.filter(((data) => (data.tags).includes('Mage')));
       break;
     case 'Assassin':
-      filterChampions = data.filter((data => (data.tags).includes('Assassin')));
+      filterChampions = data.filter(((data) => (data.tags).includes('Assassin')));
       break;
     case 'Support':
-      filterChampions = data.filter((data => (data.tags).includes('Support')));
+      filterChampions = data.filter(((data) => (data.tags).includes('Support')));
       break;
     case 'Marksman':
-      filterChampions = data.filter((data => (data.tags).includes('Marksman')));
+      filterChampions = data.filter(((data) => (data.tags).includes('Marksman')));
       break;
     default:
       filterChampions = data.sort((a, b) => ((a.name <= b.name) ? -1 : 1));
@@ -58,3 +58,13 @@ export const filterData = (data, parameter) => {
   return filterChampions
   // return 'OMG';
 };
+
+export const statsData = (data) => {
+
+   let statsChampions = 0;
+   data.forEach(data => {
+      statsChampions += data.stats.hp;
+   });
+   statsChampions = statsChampions/data.length;
+   return Math.round(statsChampions);
+}

@@ -1,4 +1,4 @@
-import { filterData, orderData } from '../src/data.js';
+import { statsData, filterData, orderData } from '../src/data.js';
 
 const data = {
   Ahri: {
@@ -9,7 +9,10 @@ const data = {
       magic: 7,
       difficulty: 6,
     },
-    tags: ["Mage", "Assassin", "Marksman"]
+    tags: ["Mage", "Assassin", "Marksman"],
+    stats:{
+      hp: 504
+    }
   },
   Zyra: {
     name: 'Zyra',
@@ -19,7 +22,10 @@ const data = {
       magic: 3,
       difficulty: 7,
     },
-    tags:["Mage", "Support"]
+    tags:["Mage", "Support"],
+    stats:{
+      hp: 507
+    }
   },
   Aatrox: {
     name: 'Aatrox',
@@ -29,7 +35,10 @@ const data = {
       magic: 1,
       difficulty: 6,
     },
-    tags:["Fighter", "Tank", "Support"]
+    tags:["Fighter", "Tank", "Support"],
+    stats:{
+      hp: 302
+    }
   }
 }
 
@@ -85,7 +94,7 @@ describe('orderData', () => {
   })
 
   it('sort by other value', () => {
-    let dataOrder = orderData(Object.values(data), 'ORDER BY');
+    let dataOrder = orderData(Object.values(data), 'SORT BY');
     expect(dataOrder[0]).toEqual(data.Aatrox)
     expect(dataOrder[1]).toEqual(data.Ahri)
     expect(dataOrder[2]).toEqual(data.Zyra)
@@ -136,5 +145,14 @@ describe('filterData', () => {
     expect(dataFilter[0]).toEqual(data.Aatrox)
     expect(dataFilter[1]).toEqual(data.Ahri)
     expect(dataFilter[2]).toEqual(data.Zyra)
+  })
+});
+
+describe('statsData', () => {
+  it('is a function', () => {
+    expect(typeof statsData).toBe('function');
+  })
+  it('Calculate prom', () => {
+    expect(statsData(Object.values(data))).toBe(438);
   })
 });

@@ -1,4 +1,4 @@
-import { filterData, orderData } from './data.js'
+import { filterData, orderData, statsData } from './data.js'
 import data from './data/lol/lol.js'
 
 
@@ -7,6 +7,7 @@ const buttonWelcome = document.querySelector('.welcome__container__button');
 const orderlist = document.querySelector('#orderlist');
 const filterlist = document.querySelector('#filterlist');
 
+statsData(championsData);
 
 // cambiar pantalla de bienvenida a principal
 function changeDisplay() {
@@ -128,6 +129,7 @@ buttonWelcome.addEventListener('click', () => {
     changeDisplay()
 })
 
+
 window.addEventListener('DOMContentLoaded', visualData(championsData))
 
 
@@ -142,7 +144,7 @@ filterlist.addEventListener('change', () => {
     visualData(filter)
     
     if(filterlist.value == 'FILTER BY'){
-       orderlist.value = 'ORDER BY' 
+       orderlist.value = 'SORT BY' 
     }
     orderlist.addEventListener('change', () => {
         let valueList = orderlist.value;
