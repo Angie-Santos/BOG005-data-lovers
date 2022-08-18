@@ -124,9 +124,9 @@ main {
     background-color: var(--primary-color);
 }
 
-/* stats */
+/* modal */
 
-#button__stats{
+#button__modal{
     padding: 0.9rem 2rem 0.9rem 2rem;
     margin: 2rem 0rem 0rem 0rem;
     right: 0;
@@ -138,14 +138,30 @@ main {
     background-color: var(--secondary-color);
 }
 
-#button__stats:hover{
+#button__modal:hover{
     box-sizing: content-box;
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    border: var(--secondary-color) 0.2rem solid;
-    box-shadow: var(--secondary-color-light) 0rem 0rem 2rem;
+    box-shadow: var(--secondary-color) 0rem 0rem 0.5rem;
 }
 
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 3;
+    width: 100%; /* Full width */
+  height: 100%;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal__content{
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
 /* list */
 
 form{

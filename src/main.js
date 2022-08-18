@@ -6,8 +6,9 @@ const championsData = Object.values(data.data);
 const buttonWelcome = document.querySelector('.welcome__container__button');
 const orderlist = document.querySelector('#orderlist');
 const filterlist = document.querySelector('#filterlist');
+const buttonModal = document.querySelector('#button__modal')
+const modal = document.querySelector('.modal');
 
-statsData(championsData);
 
 // cambiar pantalla de bienvenida a principal
 function changeDisplay() {
@@ -168,5 +169,19 @@ orderlist.addEventListener('change', () => {
     visualData(order)
 })
 
+buttonModal.addEventListener('click',()=>{
+    modal.style.display = 'block';
+    let stats = statsData(championsData);
+    modal.innerHTML = 
+    `<div class='modal__content'>
+    <p>SEASON 12 LOL</p>
+     <P>Champions HP ${stats.hp}</P>
+    </div>
+    `
+})
 
-
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }

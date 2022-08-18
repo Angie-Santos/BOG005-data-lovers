@@ -11,7 +11,11 @@ const data = {
     },
     tags: ["Mage", "Assassin", "Marksman"],
     stats:{
-      hp: 504
+      hp: 504,
+      mp: 207,
+      armor: 380,
+      attackdamage: 300,
+      spellblock: 500,
     }
   },
   Zyra: {
@@ -24,7 +28,11 @@ const data = {
     },
     tags:["Mage", "Support"],
     stats:{
-      hp: 507
+      hp: 400,
+      mp: 500,
+      armor: 380,
+      attackdamage: 370,
+      spellblock: 200,
     }
   },
   Aatrox: {
@@ -37,7 +45,11 @@ const data = {
     },
     tags:["Fighter", "Tank", "Support"],
     stats:{
-      hp: 302
+      hp: 302,
+      mp: 307,
+      armor: 480,
+      attackdamage: 100,
+      spellblock: 200,
     }
   }
 }
@@ -69,16 +81,15 @@ describe('orderData', () => {
   })
   
   it('sort by MAX ATTACK', () => {
-    
     let dataOrder = orderData(Object.values(data), 'MAX ATTACK');
     expect(dataOrder[0]).toEqual(data.Aatrox)
-    expect(dataOrder[2]).toEqual(data.Ahri)
+    expect(dataOrder[2]).toEqual(data.Zyra)
   })
   
   it('sort by MAX DEFENSE', () => {
     let dataOrder = orderData(Object.values(data), 'MAX DEFENSE');
     expect(dataOrder[0]).toEqual(data.Zyra)
-    expect(dataOrder[2]).toEqual(data.Ahri)
+    expect(dataOrder[2]).toEqual(data.Aatrox)
   })
 
   it('sort by MAX MAGIC', () => {
@@ -90,7 +101,7 @@ describe('orderData', () => {
   it('sort by MAX DIFFICULTY', () => {
     let dataOrder = orderData(Object.values(data), 'MAX DIFFICULTY');
     expect(dataOrder[0]).toEqual(data.Zyra)
-    expect(dataOrder[2]).toEqual(data.Ahri)
+    expect(dataOrder[2]).toEqual(data.Aatrox)
   })
 
   it('sort by other value', () => {
@@ -153,6 +164,12 @@ describe('statsData', () => {
     expect(typeof statsData).toBe('function');
   })
   it('Calculate prom', () => {
-    expect(statsData(Object.values(data))).toBe(438);
+    expect(statsData(Object.values(data))).toEqual({
+      hp: 402,
+      mp: 338,
+      armor: 413,
+      attackdamage: 257,
+      spellblock: 300,
+    });
   })
 });
