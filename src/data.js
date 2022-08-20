@@ -56,7 +56,6 @@ export const filterData = (data, parameter) => {
       break;
   }
   return filterChampions
-  // return 'OMG';
 };
 
 export const statsData = (data) => {
@@ -65,7 +64,6 @@ export const statsData = (data) => {
     hp:0,
     mp:0,
     armor:0,
-    spellblock:0,
     attackdamage:0,
    };
 
@@ -73,15 +71,46 @@ export const statsData = (data) => {
       statsChampions.hp += data.stats.hp;
       statsChampions.mp += data.stats.mp;
       statsChampions.armor += data.stats.armor;
-      statsChampions.spellblock += data.stats.spellblock;
       statsChampions.attackdamage += data.stats.attackdamage;
    });
    
    statsChampions.hp = Math.round(statsChampions.hp/data.length);
    statsChampions.mp = Math.round(statsChampions.mp/data.length);
    statsChampions.armor = Math.round(statsChampions.armor/data.length);
-   statsChampions.spellblock = Math.round(statsChampions.spellblock/data.length);
    statsChampions.attackdamage = Math.round(statsChampions.attackdamage/data.length);
 
    return statsChampions;
 }
+
+export const suggestedChampions = (data) =>{
+  let compare = statsData(data);
+  let  championsOption= [];
+  data.forEach(data =>{
+    if(data.stats.hp >= (compare.hp +100)){
+      championsOption.push(data.name);
+    }
+    if(data.stats.mp >= (compare.mp +100)){
+      championsOption.push(data.name);
+    }
+    if(data.stats.armor >= (compare.armor +8)){
+      championsOption.push(data.name);
+    }
+    if(data.stats.attackdamage >= (compare.attackdamage+6)){
+      championsOption.push(data.name);
+    }
+  })
+
+  
+  const bestChampions = [];
+  championsOption.forEach((champion)=>{
+    if(!bestChampions.includes(champion)){
+      bestChampions.push(champion);
+    }
+  })
+  
+  if(bestChampions.length == []){
+    return 'Lo sentimos, en esta temporada los campeones estas super competitivos! escoge el que desees'
+  }
+  return bestChampions;
+}
+

@@ -23,6 +23,7 @@
 </head>
 
 <body>
+  <!-- Pagina de bienvenida -->
   <div class="welcome">
     <div class="welcome__container">
       <img class="welcome__container__logo" src="/src/assets/img/logo.webp" alt="Logo">
@@ -34,20 +35,30 @@
     </div>
   </div>
 
+  <!-- Header -->
   <header>
-    <img src="/src/assets/img/logo.webp" alt="Logo">
+    <nav class="nav">
+      <input type="checkbox" id="nav__checkbox" class="nav__checkbox">
+      <label for="nav__checkbox" class="nav__toggle"><span class="menu">&#9776;<span></label>
+      <ul class="nav__menu">
+        <li class="menu__logo">
+          <img src="/src/assets/img/icon.png" alt="icon">
+          <img src="/src/assets/img/logo.webp" alt="Logo">
+        </li>
+        <li href="#" class="button__modal">STATS SEASON 12</li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-
-    <button id="button__modal">STATS SEASON 12</button>
-
-    <div class="modal" >
-
+  <!-- Modal   -->
+  <div class="modal">
+    <div class="modal__content">
     </div>
-    
+  </div>
+
+  <!-- Contenido principal -->
+  <main>
     <form>
-      
       <select name="filter" id="filterlist">
         <option value="FILTER BY">FILTER BY</option>
         <option value="Assassin">ASSASSIN</option>
@@ -68,10 +79,11 @@
         <option value="MAX MAGIC">MAX MAGIC</option>
         <option value="MAX DIFFICULTY">MAX DIFFICULTY</option>
       </select>
-      
+
     </form>
   </main>
 
+  <!-- Pie de pagina -->
   <footer>
     <p><b>RIOT GAMES 2022</b></p>
   </footer>

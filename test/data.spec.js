@@ -1,4 +1,4 @@
-import { statsData, filterData, orderData } from '../src/data.js';
+import { statsData, filterData, orderData, suggestedChampions } from '../src/data.js';
 
 const data = {
   Ahri: {
@@ -15,7 +15,6 @@ const data = {
       mp: 207,
       armor: 380,
       attackdamage: 300,
-      spellblock: 500,
     }
   },
   Zyra: {
@@ -32,7 +31,6 @@ const data = {
       mp: 500,
       armor: 380,
       attackdamage: 370,
-      spellblock: 200,
     }
   },
   Aatrox: {
@@ -49,7 +47,6 @@ const data = {
       mp: 307,
       armor: 480,
       attackdamage: 100,
-      spellblock: 200,
     }
   }
 }
@@ -169,7 +166,49 @@ describe('statsData', () => {
       mp: 338,
       armor: 413,
       attackdamage: 257,
-      spellblock: 300,
     });
+  })
+});
+
+describe('suggestedChampions', () => {
+  it('is a function', () => {
+    expect(typeof suggestedChampions).toBe('function');
+  })
+  it('Calculate best champions...', () => {
+    expect(suggestedChampions(Object.values(data))).toStrictEqual(['Ahri','Zyra','Aatrox']);
+  })
+
+  const dataNull = {
+    Ahri: {
+      name: 'Ahri',
+      stats:{
+        hp: 0,
+        mp: 0,
+        armor: 0,
+        attackdamage: 0,
+      }
+    },
+    Zyra: {
+      name: 'Zyra',
+      stats:{
+        hp: 0,
+        mp: 0,
+        armor: 0,
+        attackdamage: 0,
+      }
+    },
+    Aatrox: {
+      name: 'Aatrox',
+      stats:{
+        hp: 0,
+        mp: 0,
+        armor: 0,
+        attackdamage: 0,
+      }
+    }
+  }
+
+  it('If not have best champion...', () => {
+    expect(suggestedChampions(Object.values(dataNull))).toBe("Lo sentimos, en esta temporada los campeones estas super competitivos! escoge el que desees");
   })
 });

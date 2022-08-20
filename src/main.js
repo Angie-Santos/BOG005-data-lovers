@@ -1,14 +1,18 @@
-import { filterData, orderData, statsData } from './data.js'
+//********* IMPORT *********//
+import { filterData, orderData, statsData, suggestedChampions } from './data.js'
 import data from './data/lol/lol.js'
 
-
+//********* DECLARACION DE VARIABLES *********/
 const championsData = Object.values(data.data);
 const buttonWelcome = document.querySelector('.welcome__container__button');
 const orderlist = document.querySelector('#orderlist');
 const filterlist = document.querySelector('#filterlist');
-const buttonModal = document.querySelector('#button__modal')
+const buttonModal = document.querySelector('.button__modal')
 const modal = document.querySelector('.modal');
+const modalContent = document.querySelector('.modal__content');
 
+
+//********* FUNCIONES *********//
 
 // cambiar pantalla de bienvenida a principal
 function changeDisplay() {
@@ -109,8 +113,7 @@ function visualData(championsData) {
 
     }
     );
-    cardflip();
-
+    cardflip(); //invocar funcion para girar tarjeta, se invoca aqui por la creacion del HTML
 }
 
 // girar tarjeta
@@ -118,23 +121,24 @@ function cardflip() {
     let cards = document.querySelectorAll('.containercards');
     cards.forEach((card) => {
         card.addEventListener('click', function () {
-            card.classList.toggle('is-flipped');
+            card.classList.toggle('is-flipped'); //Agrega la clase o la elimina
         });
     });
 }
 
 
-//Escuchar eventos
+//********* ESCUCHAR EVENTOS Y FUNCIONES PURAS *********//
 
+//Cambiar display de bienvenida a principal
 buttonWelcome.addEventListener('click', () => {
     changeDisplay()
 })
 
-
+//Visualizar la data antes de la carga de la pagina
 window.addEventListener('DOMContentLoaded', visualData(championsData))
 
 
-
+//Filtrar y ordenar datos en conjunto
 filterlist.addEventListener('change', () => {
     let valueList = filterlist.value;
     const container = document.querySelectorAll('.containercards')
@@ -143,9 +147,9 @@ filterlist.addEventListener('change', () => {
     });
     let filter = filterData(championsData, valueList)
     visualData(filter)
-    
-    if(filterlist.value == 'FILTER BY'){
-       orderlist.value = 'SORT BY' 
+
+    if (filterlist.value == 'FILTER BY') {
+        orderlist.value = 'SORT BY'
     }
     orderlist.addEventListener('change', () => {
         let valueList = orderlist.value;
@@ -159,6 +163,8 @@ filterlist.addEventListener('change', () => {
 
 })
 
+
+//Ordenar datos independiente del filtro
 orderlist.addEventListener('change', () => {
     let valueList = orderlist.value;
     const container = document.querySelectorAll('.containercards')
@@ -169,19 +175,58 @@ orderlist.addEventListener('change', () => {
     visualData(order)
 })
 
-buttonModal.addEventListener('click',()=>{
+//Modal para visualizar calculo agregado
+buttonModal.addEventListener('click', () => {
     modal.style.display = 'block';
     let stats = statsData(championsData);
-    modal.innerHTML = 
-    `<div class='modal__content'>
-    <p>SEASON 12 LOL</p>
-     <P>Champions HP ${stats.hp}</P>
-    </div>
+    modalContent.innerHTML =
+        ` <span class="modal__content__close">&times;</span>
+        <p class='modal__content--title'>SEASON 12</p>
+        <img class='modal__content-img' src='/src/assets/img/prueba.png'>
+        <p class='modal__content--resume'>Los campeones traen nuevos niveles de habilidad.<br> 
+        ¡Elije con sabiduria y podrás ganar!</p>
+     <P class='modal__content--text'>Champions HP: 
+     <span class='modal__content--text--stats'>${stats.hp}</span></P>
+     <p class='modal__content--text'>Champions MP: 
+     <span class='modal__content--text--stats'>${stats.mp}</span></p>
+     <p class='modal__content--text'>Champions armor: 
+     <span class='modal__content--text--stats'>${stats.armor}</span></p>
+     <p class='modal__content--text'>Champions attack damage: 
+     <span class='modal__content--text--stats'>${stats.attackdamage}</span></p>
+    <button class='modal__content__button'>CAMPEONES SUGERIDOS</button>
     `
+    closeModal()//invocamos closeModal aqui por la creacion del HTML
+    viewSuggestedChampions()
 })
 
-window.onclick = function(event) {
+//Funcion para cerrar modal con x
+function closeModal() {
+    const modalClose = document.querySelector('.modal__content__close');
+    modalClose.addEventListener('click', () => {
+        modal.style.display = "none";
+    })
+}
+
+//Funcion para cerrar modal dando click fuera del mismo
+window.onclick = function (event) {
     if (event.target == modal) {
-      modal.style.display = "none";
+        modal.style.display = "none";
     }
-  }
+}
+
+function viewSuggestedChampions() {
+    const buttonSuggested = document.querySelector('.modal__content__button');
+    buttonSuggested.addEventListener('click', () => {
+        const nameChampions = suggestedChampions(championsData);
+        modalContent.innerHTML = `
+            <p class='modal__content--title'>Campeones sugeridos</p>
+            <p class='modal__content--resume'>Estos campeones son equilibrados, puedes empezar con ellos</p>
+            <p class='modal__content__champions'></p>
+            `   
+            const contentChampions = document.querySelector('.modal__content__champions')
+            
+            contentChampions.innerHTML = `
+            ${nameChampions.join(", ")}
+            `
+    })
+}
