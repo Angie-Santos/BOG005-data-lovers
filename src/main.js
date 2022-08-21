@@ -10,6 +10,7 @@ const filterlist = document.querySelector('#filterlist');
 const buttonModal = document.querySelector('.button__modal')
 const modal = document.querySelector('.modal');
 const modalContent = document.querySelector('.modal__content');
+const modalContent2 = document.querySelector('.modal__content__suggested');
 
 
 //********* FUNCIONES *********//
@@ -174,6 +175,7 @@ orderlist.addEventListener('change', () => {
     let order = orderData(championsData, valueList)
     visualData(order)
 })
+//Funcion para cerrar modal con x
 
 //Modal para visualizar calculo agregado
 buttonModal.addEventListener('click', () => {
@@ -199,28 +201,17 @@ buttonModal.addEventListener('click', () => {
     viewSuggestedChampions()
 })
 
-//Funcion para cerrar modal con x
-function closeModal() {
-    const modalClose = document.querySelector('.modal__content__close');
-    modalClose.addEventListener('click', () => {
-        modal.style.display = "none";
-    })
-}
-
-//Funcion para cerrar modal dando click fuera del mismo
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
 function viewSuggestedChampions() {
     const buttonSuggested = document.querySelector('.modal__content__button');
     buttonSuggested.addEventListener('click', () => {
+        modalContent.style.display='none';
+        modalContent2.style.display='flex';
         const nameChampions = suggestedChampions(championsData);
-        modalContent.innerHTML = `
+        modalContent2.innerHTML = `
+            <span class="modal__content__closes">&times;</span>
             <p class='modal__content--title'>Campeones sugeridos</p>
-            <p class='modal__content--resume'>Estos campeones son equilibrados, puedes empezar con ellos</p>
+            <img class='modal__image__series' src='/src/assets/img/proff.png' alt='campeones de la termporada'>
+            <p class='modal__content--resume'>Estos son los campeones más equilibrados de esta temporada. ¡Juega con ellos y compartenos tu opinión en nuestras redes sociales!</p>
             <p class='modal__content__champions'></p>
             `   
             const contentChampions = document.querySelector('.modal__content__champions')
@@ -228,5 +219,27 @@ function viewSuggestedChampions() {
             contentChampions.innerHTML = `
             ${nameChampions.join(", ")}
             `
+            closeModals()
+        })
+}
+
+function closeModal() {
+    const modalClose = document.querySelector('.modal__content__close');
+    modalClose.addEventListener('click', () => {
+        modal.style.display = "none";
     })
+}
+
+
+function closeModals() {
+    const modalCloses = document.querySelector('.modal__content__closes');
+    modalCloses.addEventListener('click', () => {
+        modal.style.display = "none";
+    })
+}
+//Funcion para cerrar modal dando click fuera del mismo
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
