@@ -31,7 +31,7 @@ html {
     border-style: inset;
     border: var(--secondary-color) 0.1rem solid;
     box-shadow: var(--secondary-color) inset 0rem 0rem 2rem;
-    background-image: url("/assets/img/fondo1.jpg");
+    background-image: url("assets/img/fondo1.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -107,7 +107,7 @@ header {
 
 .nav{
     width: 100%;
-    background: rgba(1, 5, 11, 0.9) url("/assets/img/fondo2.jpg");
+    background: rgba(1, 5, 11, 0.9) url("assets/img/fondo2.jpg");
     background-position: center;
     background-blend-mode: darken;
     border-bottom: var(--secondary-color-dark) 0.1rem solid;

@@ -49,7 +49,7 @@ function visualData(championsData) {
         //frontcard
 
         div.innerHTML =
-            `<img src='/assets/img/${rolName}.webp' class='card__imgrol'>
+            `<img src='assets/img/${rolName}.webp' class='card__imgrol'>
         <div class='card__content'>
         <p class='card__content__name'>${nameChampion}</p> 
         <p class='card__content__title'>${titleChampion}</p>
@@ -66,19 +66,19 @@ function visualData(championsData) {
             </div>
             <div class='cardback__box2'>
                 <div class='cardback__box2__box'>
-                <img class='cardback__box2--icon' src='/assets/icon/sword.webp'>
+                <img class='cardback__box2--icon' src='assets/icon/sword.webp'>
                 <p class=cardback__box2__info>${infoChampion.attack}</p>
                 </div>
                 <div class='cardback__box2__box'>
-                <img class='cardback__box2--icon' src='/assets/icon/shield.webp'>
+                <img class='cardback__box2--icon' src='assets/icon/shield.webp'>
                 <p class=cardback__box2__info>${infoChampion.defense}</p>
                 </div>
                 <div class='cardback__box2__box'>
-                <img class='cardback__box2--icon' src='/assets/icon/magic.webp'>
+                <img class='cardback__box2--icon' src='assets/icon/magic.webp'>
                 <p class=cardback__box2__info>${infoChampion.magic}</p>
                 </div>
                 <div class='cardback__box2__box'>
-                <img class='cardback__box2--icon' src='/assets/icon/level.webp'>
+                <img class='cardback__box2--icon' src='assets/icon/level.webp'>
                 <p class=cardback__box2__info>${infoChampion.difficulty}</p>
                 </div>
                 </div>
@@ -186,7 +186,7 @@ buttonModal.addEventListener('click', () => {
     modalContent.innerHTML =
         ` <span class="modal__content__close">&times;</span>
         <p class='modal__content--title'>SEASON 12</p>
-        <img class='modal__content-img' src='/assets/img/prueba.png'>
+        <img class='modal__content-img' src='assets/img/prueba.png'>
         <p class='modal__content--resume'>Los campeones traen nuevos niveles de habilidad.<br> 
         ¡Elije con sabiduria y podrás ganar!</p>
      <P class='modal__content--text'>Champions HP: 
@@ -212,7 +212,7 @@ function viewSuggestedChampions() {
         modalContent2.innerHTML = `
             <span class="modal__content__closes">&times;</span>
             <p class='modal__content--title'>Campeones sugeridos</p>
-            <img class='modal__image__series' src='/assets/img/proff.png' alt='campeones de la termporada'>
+            <img class='modal__image__series' src='assets/img/proff.png' alt='campeones de la termporada'>
             <p class='modal__content--resume'>Estos son los campeones más equilibrados de esta temporada. ¡Juega con ellos y compartenos tu opinión en nuestras redes sociales!</p>
             <p class='modal__content__champions'></p>
             `   
