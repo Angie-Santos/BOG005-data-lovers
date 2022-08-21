@@ -487,13 +487,13 @@ footer img{
 
     .welcome__container__logo {
         margin: 2rem 0rem 0rem 0rem;
-        width: 90%;
+        width: 70%;
         height: fit-content;
     }
 
     .welcome__container__img {
         padding: 0.5rem 0rem 0.5rem 0rem;
-        width: 60%;
+        width: 40%;
         height: fit-content;
     }
 
@@ -513,7 +513,41 @@ footer img{
         font-size: 1.5rem
     }
 
+    .modal__content__close, .modal__content__closes {
+        font-size: 2rem;
+    }
+    
+    .modal__content-img {
+        padding: 1rem 0rem 1rem 0rem;
+        width: 50%;
+    }
+    
+    .modal__image__series{
+        width: 60%;
+     }
 
+    .modal__content--resume,
+    .modal__content__champions {
+        font-size: 1.8rem;
+    }
+    
+    .modal__content--title {
+        font-size: 3rem;
+    }
+
+    .modal__content--text {
+        font-size: 1.5rem;
+    }
+    
+    .modal__content__button {
+        font-size: 1.5rem;
+    }
+
+    .menu__logo img{
+        height:90%;
+    }
+
+    
     .card {
         margin-top: 3rem;
         margin-bottom: 2rem;
@@ -524,7 +558,7 @@ footer img{
     .card__imgrol {
         width: 6rem;
     }
-
+    
     .card__content__name {
         font-size: 2rem;
     }
@@ -532,24 +566,24 @@ footer img{
     .card__content__title {
         font-size: 1rem;
     }
-
+    
     .cardback {
         margin-top: 3rem;
         margin-bottom: 2rem;
         width: 25rem;
         height: 28.5rem;
     }
-
+    
     .cardback__box__name {
         font-size: 2rem;
     }
-
+    
     .cardback__box__rol {
         margin: 0rem 3rem 1.3rem 3rem;
         font-size: 1.5rem;
-
+        
     }
-
+    
     .cardback__box2__info {
         font-size: 1.5rem;
     }
@@ -558,11 +592,11 @@ footer img{
         width: 2.8rem;
         height: 2.8rem;
     }
-
+    
     .cardback__box3__table--title {
         font-size: 1.1rem;
     }
-
+    
     .cardback__box3__table--data {
         font-size: 1.1rem;
     }
@@ -591,11 +625,35 @@ footer img{
         margin: 1rem;
         font-size: 3rem;
     }
-
+    
     .welcome__container__button {
         font-size: 2rem;
     }
 
+    .modal__content__close, .modal__content__closes {
+        font-size: 3rem;
+    }
+    
+    .modal__content-img {
+        width: 40%;
+    }
+    
+    .modal__image__series{
+        width: 60%;
+     }
+
+    .modal__content--resume,
+    .modal__content__champions {
+        font-size: 2rem;
+    }
+    
+    .modal__content--text {
+        font-size: 2rem;
+    }
+    
+    .modal__content__button {
+        font-size: 1.8rem;
+    }
 
     form {
         flex-direction: row;
@@ -677,6 +735,35 @@ footer img{
         font-size: 2rem;
     }
 
+    .modal__content__close, .modal__content__closes {
+        font-size: 3rem;
+    }
+    
+    .modal__content-img {
+        display: none;
+    }
+    
+    .modal__image__series{
+        width: 40%;
+     }
+
+    .modal__content--resume,
+    .modal__content__champions {
+        font-size: 2rem;
+    }
+    
+    .modal__content--text {
+        font-size: 2rem;
+    }
+    
+    .modal__content--title {
+        font-size: 4rem;
+    }
+    
+
+    .modal__content__button {
+        font-size: 1.8rem;
+    }
     
     .nav{
         border-bottom: var(--secondary-color-dark) 0.5rem solid;

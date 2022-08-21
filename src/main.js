@@ -180,6 +180,8 @@ orderlist.addEventListener('change', () => {
 //Modal para visualizar calculo agregado
 buttonModal.addEventListener('click', () => {
     modal.style.display = 'block';
+    modalContent2.style.display='none'
+    modalContent.style.display='flex'
     let stats = statsData(championsData);
     modalContent.innerHTML =
         ` <span class="modal__content__close">&times;</span>
