@@ -2,6 +2,8 @@
 
 ## Definición de producto
 
+![logo](src/assets/img/logo.webp)
+
 **Champions - LOL** es una aplicación web que almacena y permite visualizar a todos los campeones del videojuego League of legend, con sus principales características y habilidades, permite filtrar y ordenar la información para que los usuarios la consuman como deseen. 
 
 ### **¿A quién va dirigido?**
