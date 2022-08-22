@@ -740,7 +740,7 @@ footer img{
     }
     
     .modal__content-img {
-        display: none;
+        width: 15%;
     }
     
     .modal__image__series{

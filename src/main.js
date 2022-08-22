@@ -186,7 +186,7 @@ buttonModal.addEventListener('click', () => {
     modalContent.innerHTML =
         ` <span class="modal__content__close">&times;</span>
         <p class='modal__content--title'>SEASON 12</p>
-        <img class='modal__content-img' src='assets/img/prueba.png'>
+        <img class='modal__content-img' src="assets/img/prueba.png">
         <p class='modal__content--resume'>Los campeones traen nuevos niveles de habilidad.<br> 
         ¡Elije con sabiduria y podrás ganar!</p>
      <P class='modal__content--text'>Champions HP: 
@@ -212,7 +212,7 @@ function viewSuggestedChampions() {
         modalContent2.innerHTML = `
             <span class="modal__content__closes">&times;</span>
             <p class='modal__content--title'>Campeones sugeridos</p>
-            <img class='modal__image__series' src='assets/img/proff.png' alt='campeones de la termporada'>
+            <img class='modal__image__series' src="assets/img/proff.png" alt='campeones de la termporada'>
             <p class='modal__content--resume'>Estos son los campeones más equilibrados de esta temporada. ¡Juega con ellos y compartenos tu opinión en nuestras redes sociales!</p>
             <p class='modal__content__champions'></p>
             `   
