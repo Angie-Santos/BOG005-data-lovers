@@ -224,7 +224,7 @@ Se usaron los colores y estilos base que recomiendan ellos para el manejo de [su
 
 **Colores**
 
-![colors](Champions%20-%20LOL%209d2f39af5ec148b7a7f79c57ab9606b0/Untitled.png)
+![colors](colors.png)
 
 **Fuentes**
 
