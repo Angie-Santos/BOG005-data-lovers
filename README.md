@@ -222,11 +222,15 @@ Link a [drive](https://photos.google.com/share/AF1QipOyoW42KJwhxJBRoms7-bc0aoNf-
 
 Link a [Figma](https://www.figma.com/proto/irZyFyQ2uPGWXnjjn72IEp/Project-Data-Lovers---LOL?page-id=0%3A1&node-id=141%3A47&viewport=-747%2C290%2C0.07&scaling=scale-down&starting-point-node-id=141%3A47)
 
+![pc1](src/assets/img/pc1.png)
+![pc2](src/assets/img/pc2.png)
+![pc3](src/assets/img/pc3.png)
+
 Se usaron los colores y estilos base que recomiendan ellos para el manejo de [su marca](https://brand.riotgames.com/es-es/league-of-legends/fundamentals). 
 
 **Colores**
 
-![colors](colors.png)
+![colors](src/assets/img/colors.png)
 
 **Fuentes**
 
